@@ -1,11 +1,12 @@
 html {
     width: 100%;
     background-color: white;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
+    font-family: Verdana, Geneva, Tahoma, sans-serif; # gut - aber typischerweise alles eher in den body, auf das html willst du eigentlich nicht stylen
+} 
+# Leerzeile vor öffnender Klammer
 body {
-    
-    align-self: center;
+# Keine Leerzeile danach (dient besserer Lesbarkeit, du gruppierst dann zusammengehöriges besser)
+    align-self: center; # bewirkt nichts an der Stelle - außerhalb deines body liegt kein flex mehr
     background-color: whitesmoke;
     border: 1px solid grey;
     box-shadow: -2px -2px grey;
@@ -15,7 +16,7 @@ body {
 }
 .main {
     display: flex;
-    flex-direction: row;
+    flex-direction: row; # das ist der default, den solltest du weglassen, wenn du hier nicht etwas überschreibst
     justify-content: space-between;
 }
 h2 {
@@ -33,20 +34,21 @@ h2 {
 .option:hover {
     background-color: darkblue;
     color: white;
-    transition: 1s ease;
+    transition: 1s ease; # spezifizieren, was alles transitioned werden soll - wenn alles, dann ruhig all 1s ease; normalerweise willst du ein ease-in-out (selten ein ease-in oder ease-out), das wirkt angenehmer; 1s ist extrem lang - standardwert bei uns ist hier 0.3s, teils auch nur die Hälfte bei zusammengesetzten Animationen, ganz, ganz selten mal 0.6s
 }
 .option:hover > button {
     background-color: white;
     color: darkblue;
     border: none;
-    cursor: pointer;
-    transform: scale(1.1);
-    transition: 1s ease;
+    cursor: pointer; # gut
+    transform: scale(1.1); # nice
+    transition: 1s ease; # s.o.
 }
 .option-name {
-    text-transform: uppercase;
+    text-transform: uppercase; # gut, besser als es direkt groß ins HTML zu schreiben imo
 }
-h3 {
+h3 { # Reihenfolge vielleicht ändern - deine h2 steht ganz wo anders
+    # am besten erst alle tags (body, h2, h3, button, ...), dann alle Klassen (.feature, .option, ...), dann ids
     font-size: 30px;
 }
 .feature {
@@ -59,11 +61,11 @@ button {
     background-color: blue;
     color: white;
     font-weight: bold;
-    letter-spacing: 1.2px;
+    letter-spacing: 1.2px; # das ist die Ausnahme zu unten, hier sind Kommazahlen erlaubt - normalerweise setzt du letter-spacing aber nur, wenn da irgendein Designer das so will
     padding: 10px;
     font-size: 15px;
     border: solid 1px blue;
-    box-shadow: 0.5px 0.5px darkblue;
+    box-shadow: 0.5px 0.5px darkblue; # nein, halbe Pixel wollen wir nicht - die Browser runden das ohnehin, zum Teil jedoch unterschiedlich
 }
 .hidden {
     display: none;
@@ -74,6 +76,8 @@ button {
 .details h3 {
     text-transform: uppercase;
 }
-.details button {
+.details button { # das überschreibt den button, sollte direkt unter ihm stehen
     margin: 50px 0;
 }
+
+#evtl in mehrere files aufsplitten, z.b. button.css, headline.css, details.css, ...
