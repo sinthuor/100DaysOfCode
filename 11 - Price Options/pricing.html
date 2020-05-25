@@ -14,7 +14,9 @@
                 <p class="feature">Feature 1</p>
                 <p class="feature">Feature 2</p>
                 <p class="feature">Feature 3</p>
-                <button id="basic-button" onclick="toggleVisibility()">Learn more</button>
+                <button id="basic-button">Learn more</button>
+               <!--- im JS: document.querySelector('#basic-button').addEventListener('click', toggleVisibility); ---> 
+               
             </div>
             <div class="option">
                 <p class="option-name">full</p>
@@ -33,7 +35,7 @@
                 <button>Learn more</button>
             </div>
         </div>
-        <div id="basic-detail" class="details hidden">
+        <div id="basic-detail" class="details hidden"> <!--- hier gibt es sogar die hidden Klasse - darüber dann lösen -->
             <h3>basic</h3>
             <p class="feature">Feature 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Curabitur nec dictum tellus, a dictum metus. Donec interdum mi at elit sagittis placerat.
